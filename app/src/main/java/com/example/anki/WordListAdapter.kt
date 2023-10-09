@@ -36,7 +36,7 @@ class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
     }
 
     interface OnWordClickListener {
-        fun onWordClick()
+        fun onWordClick(word: String)
     }
 
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
@@ -44,7 +44,7 @@ class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
         holder.tvWord.text = word
 
         holder.view.setOnClickListener {
-            onWordClickListener?.onWordClick()
+            onWordClickListener?.onWordClick(word)
             holder.lLayout.setBackgroundColor(Color.CYAN)
         }
 

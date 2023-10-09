@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         rvList.adapter = wordListAdapter
 
         wordListAdapter.onWordClickListener = object : WordListAdapter.OnWordClickListener {
-            override fun onWordClick() {
+            override fun onWordClick(word: String) {
             }
 
         }
