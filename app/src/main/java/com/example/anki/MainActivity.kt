@@ -3,6 +3,7 @@ package com.example.anki
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 
@@ -27,5 +28,11 @@ class MainActivity : AppCompatActivity() {
         val rvList = findViewById<RecyclerView>(R.id.rv_list)
         wordListAdapter = WordListAdapter()
         rvList.adapter = wordListAdapter
+
+        wordListAdapter.onWordClickListener = object : WordListAdapter.OnWordClickListener {
+            override fun onWordClick() {
+            }
+
+        }
     }
 }

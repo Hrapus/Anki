@@ -9,7 +9,7 @@ object Datas {
 
     init {
         val mList = mutableListOf<String>()
-        for (i in 0 .. 100){
+        for (i in 0 .. 10){
             val word = "The students agree they have too much homework #$i"
             mList.add(word)
         }
