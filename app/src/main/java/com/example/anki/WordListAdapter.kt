@@ -18,7 +18,7 @@ class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
             notifyDataSetChanged()
         }
 
-    var onWordClickListener: OnWordClickListener? = null
+    var onWordClickListener: ((String) -> Unit)? = null
 
     class WordViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val tvWord = view.findViewById<TextView>(R.id.tv_word)
@@ -44,7 +44,7 @@ class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
         holder.tvWord.text = word
 
         holder.view.setOnClickListener {
-            onWordClickListener?.onWordClick(word)
+            onWordClickListener?.invoke(word)
             holder.lLayout.setBackgroundColor(Color.CYAN)
         }
 

@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.returnList().observe(this){
-            Log.d("test", it.toString())
+            //Log.d("test", it.toString())
             wordListAdapter.wordList = it
         }
     }
@@ -29,9 +29,7 @@ class MainActivity : AppCompatActivity() {
         wordListAdapter = WordListAdapter()
         rvList.adapter = wordListAdapter
 
-        wordListAdapter.onWordClickListener = object : WordListAdapter.OnWordClickListener {
-            override fun onWordClick(word: String) {
-            }
+        wordListAdapter.onWordClickListener = {
 
         }
     }
