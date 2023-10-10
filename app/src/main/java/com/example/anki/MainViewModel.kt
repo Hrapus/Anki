@@ -11,4 +11,12 @@ class MainViewModel: ViewModel() {
         return repos
     }
 
+    fun deleteWord(index:Int){
+        Datas.deleteWord(index)
+    }
+
+    fun addWord(word:String){
+        Datas.addWord(word)
+    }
+
 }

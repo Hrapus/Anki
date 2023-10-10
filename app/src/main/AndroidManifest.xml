@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Anki"
         tools:targetApi="31">
         <activity
+            android:name=".AddItemActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

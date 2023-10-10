@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+
 
 class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
 
@@ -35,8 +35,9 @@ class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
         return wordList.size
     }
 
-    interface OnWordClickListener {
-        fun onWordClick(word: String)
+    override fun onViewRecycled(holder: WordViewHolder) {
+        super.onViewRecycled(holder)
+        holder.lLayout.setBackgroundResource(R.color.purple_200)
     }
 
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
@@ -47,6 +48,5 @@ class WordListAdapter : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
             onWordClickListener?.invoke(word)
             holder.lLayout.setBackgroundColor(Color.CYAN)
         }
-
     }
 }
