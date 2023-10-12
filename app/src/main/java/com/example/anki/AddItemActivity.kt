@@ -8,7 +8,7 @@ import com.google.android.material.textfield.TextInputEditText
 
 class AddItemActivity : AppCompatActivity() {
 
-    lateinit var newWord : String
+    private lateinit var newWord : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)

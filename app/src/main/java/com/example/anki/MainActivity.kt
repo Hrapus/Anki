@@ -29,17 +29,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         addButton = findViewById(R.id.button_add_word)
 
-
         setupRecycleView()
+
         addButton.setOnClickListener {
             val intent = Intent(this, AddItemActivity::class.java)
             startForResult.launch(intent)
         }
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        viewModel.returnList().observe(this){
-            Log.d("test", it.toString())
-            wordListAdapter.wordList = it
+        viewModel.returnList().observe(this){ Word ->
+            Log.d("test", Word.toString())
+            wordListAdapter.wordList = Word.map { it.word }
         }
     }
 

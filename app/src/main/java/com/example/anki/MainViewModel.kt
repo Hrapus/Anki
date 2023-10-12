@@ -7,7 +7,7 @@ class MainViewModel: ViewModel() {
 
     private val repos = Datas.getList()
 
-    fun returnList(): LiveData<List<String>>{
+    fun returnList(): LiveData<List<Word>>{
         return repos
     }
 
